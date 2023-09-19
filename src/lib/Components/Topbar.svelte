@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { t } from '$lib/translations';
     import DropdownLanguage from "./DropdownLanguage.svelte";
 
     let tabsSlider: HTMLDivElement;
