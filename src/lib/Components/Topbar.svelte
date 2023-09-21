@@ -17,7 +17,7 @@
     <div id="tabs" class="flex flex-row gap-8 relative">
         <div bind:this={tabsSlider} class="-z-10 w-24 h-10 absolute bg-gray-200 rounded-full transition-transform duration-300 ease-in-out"></div>
         <a href="/" on:click={slideTabs} data-tabs="0">
-            <p>Projects</p>
+            <p>{$t("home.topbar.projects")}</p>
         </a>
         <a href="/" on:click={slideTabs} data-tabs="1">
             <p>CV</p>
