@@ -1,5 +1,6 @@
 {
-    "topbar.projects": "Projets",
+    "topbar.tab1": "Accueil",
+    "topbar.tab2": "Projets",
 
     "summary.welcome": "Bienvenue",
     "summary.job": "Freelance développeur Web",

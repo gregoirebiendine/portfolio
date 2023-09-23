@@ -12,13 +12,13 @@ const config = ({
       ).default,
     },
     {
-        locale: 'fr',
-        key: 'home',
-        routes: ['/'],
-        loader: async () => (
-          await import('./langs/fr/home.json')
-        ).default,
-      },
+      locale: 'fr',
+      key: 'home',
+      routes: ['/'],
+      loader: async () => (
+        await import('./langs/fr/home.json')
+      ).default,
+    }
   ],
 });
 

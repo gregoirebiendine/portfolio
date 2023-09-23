@@ -1,8 +1,9 @@
 {
-    "topbar.projects": "Projects",
+    "topbar.tab1": "Home",
+    "topbar.tab2": "Projects",
 
     "summary.welcome": "Welcome",
     "summary.job": "Freelance Web",
-    "summary.localisation": "Currently at Barcelona",
+    "summary.localisation": "Currently in Barcelona",
     "summary.openwork": "Open to all proposals"
 }

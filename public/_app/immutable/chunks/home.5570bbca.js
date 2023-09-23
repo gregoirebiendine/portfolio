@@ -1,0 +1,1 @@
+const o={"topbar.tab1":"Home","topbar.tab2":"Projects","summary.welcome":"Welcome","summary.job":"Freelance Web","summary.localisation":"Currently in Barcelona","summary.openwork":"Open to all proposals"};export{o as default};
