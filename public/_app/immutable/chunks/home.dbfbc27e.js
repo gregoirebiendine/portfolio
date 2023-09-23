@@ -1,0 +1,1 @@
+const e={"topbar.tab1":"Accueil","topbar.tab2":"Projets","summary.welcome":"Bienvenue","summary.job":"Freelance développeur Web","summary.localisation":"Actuellement à Barcelone","summary.openwork":"Ouvert à toutes propositions","summary.experience":"2 ans d'expérience"};export{e as default};
