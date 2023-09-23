@@ -1,3 +1,8 @@
 {
-    "topbar.projects": "Projets"
+    "topbar.projects": "Projets",
+
+    "summary.welcome": "Bienvenue",
+    "summary.job": "Freelance développeur Web",
+    "summary.localisation": "Actuellement à Barcelone",
+    "summary.openwork": "Ouvert à toutes propositions"
 }

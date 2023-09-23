@@ -10,7 +10,7 @@
     }
 </script>
 
-<div class="w-full flex flex-row justify-between items-center p-4">
+<div class="w-full flex flex-row justify-between items-center py-4">
     <a href="/" class="h-[64px]">
         <img class="h-full" src="/logo.svg" alt="Logo">
     </a>
