@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@supabase/supabase-js": "^2.36.0",
 		"aos": "^2.3.4",
 		"sveltekit-i18n": "^2.4.2"
 	}

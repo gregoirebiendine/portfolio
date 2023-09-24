@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { t } from '$lib/translations';
+    import { t } from '$lib/Translations/translations';
     import Topbar from "$lib/Components/Topbar.svelte";
 
+    export let data;
 </script>
 
 <main class="w-[50%] h-screen mx-auto">

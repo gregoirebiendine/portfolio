@@ -1,7 +1,7 @@
 <script lang="ts">
     import { clickOutside } from '$lib/Events/ClickOutside';
-    import { locale, locales } from '$lib/translations';
-    import { flags } from '$lib/langs/flags';
+    import { locale, locales } from '$lib/Translations/translations';
+    import { flags } from '$lib/Translations/langs/flags';
 
     let dropdownPanel: HTMLDivElement;
 
