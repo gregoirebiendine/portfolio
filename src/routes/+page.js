@@ -8,7 +8,9 @@ export async function load({ url }) {
     if (browser) {
         const { pathname } = url;
         const initLocale = window.localStorage.getItem("lang") || 'en';
-        await loadTranslations(initLocale, pathname);
+        try {
+            await loadTranslations(initLocale, pathname);
+        } catch (e) { /* empty */ }
     }
 
     //Supabase

@@ -2,45 +2,51 @@
     import { t } from '$lib/Translations/translations';
     import DropdownLanguage from "./DropdownLanguage.svelte";
 
-    let tabsSlider: HTMLDivElement;
+    let tabsContainer: HTMLDivElement;
 
-    function slideTabs(e: Event) {
-        let tabNumber: number = Number((e.target as HTMLElement).dataset.tabs);
-        tabsSlider.style.transform = `translateX(${tabNumber * 133}%)`;
+    function setActiveTab(e: Event) {
+        const target = (e.target as HTMLElement);
+
+        tabsContainer.querySelectorAll('a').forEach(e => {
+            if (e.dataset.tabs != target.dataset.tabs)
+                e.querySelector('p')?.classList.remove('underline');
+            else
+                e.querySelector('p')?.classList.add('underline');
+        });
     }
 </script>
 
-<div class="w-full flex flex-row justify-between items-center py-4">
-    <a href="/" class="h-16">
-        <img class="h-full" src="/logo.svg" alt="Logo">
+<div class="w-full flex flex-row justify-between items-center py-4 px-8">
+    <a href="/" class="inline-flex items-center">
+        <img class="w-12 h-full" src="/logo.svg" alt="Logo">
+        <h1 class="font-bebas-neue text-[50px] text-white tracking-[5px] ml-8">GRéGOIRE BIENDINé</h1>
     </a>
 
-    <div id="tabs" class="flex flex-row gap-8 relative">
-        <div bind:this={tabsSlider} class="-z-10 w-24 h-10 absolute bg-gray-200 rounded-full transition-transform duration-300 ease-in-out"></div>
-        <a href="/" on:click={slideTabs} data-tabs="0"> <!-- Home "/" -->
-            <p>{$t("home.topbar.tab1")}</p> 
-        </a>
-        <a href="/" on:click={slideTabs} data-tabs="1"> <!-- Projects "/projects" -->
-            <p>{$t("home.topbar.tab2")}</p>
-        </a>
-        <a href="/" on:click={slideTabs} data-tabs="2"> <!-- CV "/about" -->
-            <p>CV</p>
-        </a>
+    <div class="inline-flex items-center gap-20">
+        <div id="tabsContainer" bind:this={tabsContainer} class="inline-flex gap-20 relative font-bebas-neue-pro text-[40px] text-white uppercase">
+            <a href="#aboutpage" on:click={setActiveTab} data-tabs="0"> <!-- About -->
+                <p>{$t("home.topbar.tab1")}</p> 
+            </a>
+            <a href="/" on:click={setActiveTab} data-tabs="1"> <!-- CV -->
+                <p>{$t("home.topbar.tab2")}</p>
+            </a>
+            <a href="/" on:click={setActiveTab} data-tabs="2"> <!-- Portfolio -->
+                <p>{$t("home.topbar.tab3")}</p>
+            </a>
+            <a href="/" on:click={setActiveTab} data-tabs="3"> <!-- Contact -->
+                <p>{$t("home.topbar.tab4")}</p>
+            </a>
+        </div>
+    
+        <DropdownLanguage/>
     </div>
-
-    <DropdownLanguage/>
 </div>
 
 <style lang="postcss">
-    #tabs a {
-        @apply w-24 h-10 flex justify-center items-center;
+    #tabsContainer p {
+        @apply pointer-events-none underline-offset-4;
     }
-
-    #tabs a p {
-        @apply font-sans font-medium text-base text-gray-600 pointer-events-none opacity-90 transition-opacity duration-300;
-    }
-
-    #tabs a:hover p {
+    /* #tabs a:hover p {
         @apply opacity-100;
-    }
+    } */
 </style>

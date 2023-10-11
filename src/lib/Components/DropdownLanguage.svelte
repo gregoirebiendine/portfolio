@@ -23,7 +23,7 @@
 </script>
 
 <div class="relative">
-    <button on:click={openDropdownPanel} use:clickOutside={closeDropdownPanel} class="inline-flex items-center py-2.5 px-4 text-sm font-sans font-medium text-center select-none text-gray-500 bg-gray-100 border border-gray-300 rounded-lg outline-none hover:bg-gray-200 focus:ring-4 focus:ring-gray-100">
+    <button on:click={openDropdownPanel} use:clickOutside={closeDropdownPanel} class="inline-flex items-center py-2.5 px-4 text-base font-bebas-neue-pro text-white text-center select-none border border-white rounded-lg outline-none focus:ring-4 focus:ring-gray-700">
         <img src={flags[$locale]} alt="flag" class="aspect-2/1 mr-2 h-3">
         {$locale?.toLocaleUpperCase()}
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="shrink-0 w-3 h-3 ml-2" role="img" viewBox="0 0 10 6">
@@ -31,11 +31,11 @@
         </svg>
     </button>
 
-    <div bind:this={dropdownPanel} class="w-full hidden rounded-lg bg-gray-100 border border-gray-300 absolute top-full left-0 select-none">
+    <div bind:this={dropdownPanel} class="w-full hidden rounded-lg border border-white absolute top-full left-0 select-none">
         {#each locales.get() as l}
-            <button on:click={selectLocale} class="w-full py-2.5 px-4 inline-flex justify-center items-center outline-none hover:bg-gray-200" data-locale={l}>
+            <button on:click={selectLocale} class="w-full py-2.5 px-4 inline-flex justify-center items-center outline-none hover:opacity-70" data-locale={l}>
                 <img src={flags[l]} alt="flag" class="aspect-2/1 mr-2 h-3 pointer-events-none">
-                <p class="text-sm font-sans font-medium text-center text-gray-500 pointer-events-none">{l?.toLocaleUpperCase()}</p>
+                <p class="text-base font-bebas-neue-pro text-white text-center pointer-events-none">{l?.toLocaleUpperCase()}</p>
             </button>
         {/each}
     </div>

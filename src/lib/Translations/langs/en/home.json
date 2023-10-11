@@ -1,10 +1,8 @@
 {
-    "topbar.tab1": "Home",
-    "topbar.tab2": "Projects",
+    "topbar.tab1": "About",
+    "topbar.tab2": "CV",
+    "topbar.tab3": "Portfolio",
+    "topbar.tab4": "Contact",
 
-    "summary.welcome": "Welcome",
-    "summary.job": "Freelance Web",
-    "summary.localisation": "Currently in Barcelona",
-    "summary.openwork": "Open to all proposals",
-    "summary.experience": "2 years of experience"
+    "discover": "Discover"
 }

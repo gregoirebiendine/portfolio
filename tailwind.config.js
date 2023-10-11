@@ -3,19 +3,17 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      aspectRatio: {
-        "2/1": "2/1"
-      },
       colors: {
-        "primary": "#5c5580",
-        "secondary": "#5f9cc1",
-        "tertiary": "#d76d6d",
+        "graybg": "#141010",
       },
       fontFamily: {
-        "poppins": "Poppins, sans-serif"
+        "poppins": "Poppins, sans-serif",
+        "bebas-neue": "'bebas-neue', sans-serif",
+        "bebas-neue-pro": "'bebas-neue-pro', sans-serif",
+        "bahnschrift": "'bahnschrift', sans-serif",
       },
       backgroundImage: {
-        'stats': "url('/bg-stats.svg')",
+        'deco': "url('/background-deco.svg')",
       }
     },
   },
