@@ -1,1 +1,0 @@
-const e={"topbar.tab1":"Home","topbar.tab2":"Projects","summary.welcome":"Welcome","summary.job":"Freelance Web","summary.localisation":"Currently in Barcelona","summary.openwork":"Open to all proposals","summary.experience":"2 years of experience"};export{e as default};
