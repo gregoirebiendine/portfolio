@@ -2,7 +2,7 @@
     import { t } from '$lib/Translations/translations';
 </script>
 
-<div id="aboutpage" class="w-full h-screen flex flex-col justify-center items-center gap-36">
+<div id="about" class="w-full h-screen flex flex-col justify-center items-center gap-36">
     <div class="flex flex-row items-center gap-36">
         <img src="/home-visu.svg" alt="Computer" data-aos="fade-up">
         <div data-aos="fade-down" data-aos-delay="200">

@@ -1,41 +1,29 @@
-<script lang="ts">
+<script lang="ts" context="module">
     import { t } from '$lib/Translations/translations';
     import DropdownLanguage from "./DropdownLanguage.svelte";
-
-    let tabsContainer: HTMLDivElement;
-
-    function setActiveTab(e: Event) {
-        const target = (e.target as HTMLElement);
-
-        tabsContainer.querySelectorAll('a').forEach(e => {
-            if (e.dataset.tabs != target.dataset.tabs)
-                e.querySelector('p')?.classList.remove('underline');
-            else
-                e.querySelector('p')?.classList.add('underline');
-        });
-    }
+    import { setActiveTab, scrollToPage } from '$lib/Utils/PageBehavior';
 </script>
 
-<div class="w-full flex flex-row justify-between items-center py-4 px-8">
+<div class="w-full flex flex-row justify-between items-center fixed py-2 px-8 z-10 bg-graybg">
     <a href="/" class="inline-flex items-center">
-        <img class="w-12 h-full" src="/logo.svg" alt="Logo">
+        <img class="w-10 h-full" src="/logo.svg" alt="Logo">
         <h1 class="font-bebas-neue text-[50px] text-white tracking-[5px] ml-8">GRéGOIRE BIENDINé</h1>
     </a>
 
     <div class="inline-flex items-center gap-20">
-        <div id="tabsContainer" bind:this={tabsContainer} class="inline-flex gap-20 relative font-bebas-neue-pro text-[40px] text-white uppercase">
-            <a href="#aboutpage" on:click={setActiveTab} data-tabs="0"> <!-- About -->
+        <div id="tabsContainer" class="inline-flex gap-20">
+            <button on:click={scrollToPage} data-tabs="about">
                 <p>{$t("home.topbar.tab1")}</p> 
-            </a>
-            <a href="/" on:click={setActiveTab} data-tabs="1"> <!-- CV -->
+            </button>
+            <button on:click={scrollToPage} data-tabs="cv">
                 <p>{$t("home.topbar.tab2")}</p>
-            </a>
-            <a href="/" on:click={setActiveTab} data-tabs="2"> <!-- Portfolio -->
+            </button>
+            <button on:click={scrollToPage} data-tabs="porfolio">
                 <p>{$t("home.topbar.tab3")}</p>
-            </a>
-            <a href="/" on:click={setActiveTab} data-tabs="3"> <!-- Contact -->
+            </button>
+            <button on:click={scrollToPage} data-tabs="contact">
                 <p>{$t("home.topbar.tab4")}</p>
-            </a>
+            </button>
         </div>
     
         <DropdownLanguage/>
@@ -44,9 +32,14 @@
 
 <style lang="postcss">
     #tabsContainer p {
-        @apply pointer-events-none underline-offset-4;
+        @apply pointer-events-none underline-offset-4 font-bebas-neue-pro text-[40px] text-white uppercase;
     }
-    /* #tabs a:hover p {
-        @apply opacity-100;
-    } */
+
+    #tabsContainer button {
+        @apply transition-opacity duration-300;
+    }
+
+    #tabsContainer button:hover {
+        @apply opacity-80;
+    }
 </style>

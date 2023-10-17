@@ -13,7 +13,3 @@
     <PageHome/>
     <PageAbout/>
 </main>
-
-<style lang="postcss">
-
-</style>
