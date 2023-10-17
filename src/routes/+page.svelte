@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { t } from '$lib/Translations/translations';
     import Topbar from "$lib/Components/Topbar.svelte";
     import PageHome from '$lib/Components/PageHome.svelte';
     import PageAbout from '$lib/Components/PageAbout.svelte';

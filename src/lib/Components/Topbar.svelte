@@ -1,7 +1,11 @@
-<script lang="ts" context="module">
-    import { t } from '$lib/Translations/translations';
+<script lang="ts">
     import DropdownLanguage from "./DropdownLanguage.svelte";
-    import { setActiveTab, scrollToPage } from '$lib/Utils/PageBehavior';
+    import { scrollToPage } from '$lib/Utils/PageBehavior';
+    import { getContext } from "svelte";
+    import type { Writable } from "svelte/store";
+    import type { i18n } from "i18next";
+
+    const i18n: Writable<i18n> = getContext("i18n");
 </script>
 
 <div class="w-full flex flex-row justify-between items-center fixed py-2 px-8 z-10 bg-graybg">
@@ -13,16 +17,16 @@
     <div class="inline-flex items-center gap-20">
         <div id="tabsContainer" class="inline-flex gap-20">
             <button on:click={scrollToPage} data-tabs="about">
-                <p>{$t("home.topbar.tab1")}</p> 
+                <p>{$i18n.t("topbar.tab1")}</p> 
             </button>
             <button on:click={scrollToPage} data-tabs="cv">
-                <p>{$t("home.topbar.tab2")}</p>
+                <p>{$i18n.t("topbar.tab2")}</p>
             </button>
             <button on:click={scrollToPage} data-tabs="porfolio">
-                <p>{$t("home.topbar.tab3")}</p>
+                <p>{$i18n.t("topbar.tab3")}</p>
             </button>
             <button on:click={scrollToPage} data-tabs="contact">
-                <p>{$t("home.topbar.tab4")}</p>
+                <p>{$i18n.t("topbar.tab4")}</p>
             </button>
         </div>
     

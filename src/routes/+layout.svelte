@@ -1,10 +1,13 @@
 <script>
+    import { onMount, setContext } from "svelte";
+    import getI18nStore from "$lib/Translations/i18n";
     import AOS from "aos";
     import "../app.css";
-    import { onMount } from "svelte";
+  
+    setContext('i18n', getI18nStore());
 
     onMount(() => {
-      AOS.init();
+        AOS.init();
     });
 </script>
   

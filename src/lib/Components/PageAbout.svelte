@@ -1,5 +1,9 @@
 <script lang="ts">
-    import { t } from '$lib/Translations/translations';
+    import { getContext } from "svelte";
+    import type { Writable } from "svelte/store";
+    import type { i18n } from "i18next";
+
+    const i18n: Writable<i18n> = getContext("i18n");
 </script>
 
 <div id="about" class="w-full h-screen flex flex-col justify-center items-center gap-36">
@@ -11,6 +15,3 @@
         </div>
     </div>
 </div>
-
-<style lang="postcss">
-</style>

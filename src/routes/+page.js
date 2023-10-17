@@ -1,18 +1,7 @@
-import { browser } from '$app/environment';
-import { loadTranslations } from '$lib/Translations/translations';
 import { supabase } from "$lib/supabase";
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ url }) {
-    //I18N
-    if (browser) {
-        const { pathname } = url;
-        const initLocale = window.localStorage.getItem("lang") || 'en';
-        try {
-            await loadTranslations(initLocale, pathname);
-        } catch (e) { /* empty */ }
-    }
-
+export async function load() {
     //Supabase
     const { data } = await supabase.from("projects").select();
     return {
